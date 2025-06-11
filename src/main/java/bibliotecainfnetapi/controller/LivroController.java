@@ -1,15 +1,22 @@
-package med.voll.bibliotecainfnetapi.controller;
+package bibliotecainfnetapi.controller;
 
-import med.voll.bibliotecainfnetapi.model.Livro;
-import med.voll.bibliotecainfnetapi.service.LivroService;
+import bibliotecainfnetapi.model.Livro;
+import bibliotecainfnetapi.repository.LivroRepository;
+import bibliotecainfnetapi.service.LivroService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class LivroController {
 
-    LivroService livroService = new LivroService();
+    @Autowired
+    LivroService livroService;
 
     Scanner scanner = new Scanner(System.in);
+    @Autowired
+    private LivroRepository livroRepository;
 
     public void exibeFormularioCadastroLivro () {
         System.out.println("Digite o nome do livro: ");
@@ -31,7 +38,7 @@ public class LivroController {
         livro.setCategoria(categoria);
 
         livroService.cadastroLivro(livro);
-        System.out.println("Livro cadastrado com sucesso!");
+        System.out.println(livro + " cadastrado com sucesso!");
     }
 
     public void exibeFormularioExclusaoLivro () {
@@ -43,7 +50,9 @@ public class LivroController {
         scanner.nextLine();
 
         livroService.excluirLivro(livroParaExcluir);
-        System.out.println("Livro excluido com sucesso!");
+
+        var livroExcluido = livroRepository.findLivroById(livroParaExcluir);
+        System.out.println("Livro " + livroExcluido + "excluído com sucesso!");
     }
 
     public void exibeFormularioEditaLivro() {
@@ -85,6 +94,5 @@ public class LivroController {
             default:
                 System.out.println("Opção inválida.");
         }
-
     }
 }

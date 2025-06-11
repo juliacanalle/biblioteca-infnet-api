@@ -1,7 +1,6 @@
-package med.voll.bibliotecainfnetapi.repository;
+package bibliotecainfnetapi.repository;
 
-import med.voll.bibliotecainfnetapi.model.Administrador;
-import med.voll.bibliotecainfnetapi.model.Usuario;
+import bibliotecainfnetapi.model.Administrador;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package med.voll.bibliotecainfnetapi.enums;
+package bibliotecainfnetapi.enums;
 
 public enum TipoUsuario {
 

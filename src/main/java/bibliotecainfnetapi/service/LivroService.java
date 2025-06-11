@@ -1,12 +1,16 @@
-package med.voll.bibliotecainfnetapi.service;
+package bibliotecainfnetapi.service;
 
-import med.voll.bibliotecainfnetapi.model.Livro;
-import med.voll.bibliotecainfnetapi.repository.LivroRepository;
+import bibliotecainfnetapi.model.Livro;
+import bibliotecainfnetapi.repository.LivroRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LivroService {
 
+    @Autowired
     LivroRepository livroRepository;
 
     public void cadastroLivro(Livro livro) {
@@ -18,7 +22,15 @@ public class LivroService {
     }
 
     public void exibirListaDeLivros() {
-        livroRepository.findAll();
+        List<Livro> livros = livroRepository.findAll();
+        if (livros.isEmpty()) {
+            System.out.println("Nenhum livro cadastrado no sistema.");
+        } else {
+            System.out.println("=== Lista de Livros Disponíveis ===");
+            for (Livro livro : livros) {
+                System.out.println(livro);
+            }
+        }
     }
 
     public void editarTituloLivro(long id, String novoTitulo) {

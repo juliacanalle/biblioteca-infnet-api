@@ -1,13 +1,8 @@
-package med.voll.bibliotecainfnetapi.model;
+package bibliotecainfnetapi.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import med.voll.bibliotecainfnetapi.enums.TipoUsuario;
-
-import java.time.LocalDate;
+import bibliotecainfnetapi.enums.TipoUsuario;
 
 @Entity
 @Table(name = "usuarios")
