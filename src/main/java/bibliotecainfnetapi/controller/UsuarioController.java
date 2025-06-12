@@ -120,13 +120,11 @@ public class UsuarioController {
         scanner.nextLine();
 
         switch (opcaoPagamento) {
-            case 1 -> formaPagamentoController.processarPagamentoCartao();
+            case 1 -> formaPagamentoController.processarPagamentoCartaoAluguel();
             case 2 -> formaPagamentoController.processarPagamentoBoleto();
             case 3 -> formaPagamentoController.processarPagamentoPix();
             default -> System.out.println("Opção inválida.");
         }
-
-        System.out.println("Aluguel realizado com sucesso! Aproveite seus livros.");
     }
 
     public void exibeFormularioFluxoAssinatura() {
@@ -172,15 +170,12 @@ public class UsuarioController {
         scanner.nextLine();
 
         switch (opcaoPagamento) {
-            case 1 -> formaPagamentoController.processarPagamentoCartao();
+            case 1 -> formaPagamentoController.processarPagamentoCartaoAssinatura();
             case 2 -> formaPagamentoController.processarPagamentoBoleto();
             case 3 -> formaPagamentoController.processarPagamentoPix();
             default -> System.out.println("Opção inválida.");
         }
-
-        System.out.println("Assinatura concluída com sucesso! Aproveite seu plano " + nomePlano + ".");
     }
-
 }
 
 

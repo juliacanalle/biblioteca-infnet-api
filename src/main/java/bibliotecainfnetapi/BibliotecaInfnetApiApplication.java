@@ -16,7 +16,7 @@ public class BibliotecaInfnetApiApplication {
     }
 
     @Bean
-    public CommandLineRunner runner(UsuarioController usuarioController, LivroController livroController, AdministradorController administradorController, MenuPrincipal menuPrincipal) {
+    public CommandLineRunner runner(MenuPrincipal menuPrincipal) {
         return args -> {
             menuPrincipal.exibirMenuPrincipal();
         };

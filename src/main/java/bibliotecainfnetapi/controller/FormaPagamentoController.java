@@ -9,7 +9,7 @@ public class FormaPagamentoController {
 
     private final Scanner scanner = new Scanner(System.in);
 
-    public void processarPagamentoCartao() {
+    public void processarPagamentoCartaoAluguel() {
         System.out.println("Informe o número do cartão:");
         String numero = scanner.nextLine();
 
@@ -22,7 +22,23 @@ public class FormaPagamentoController {
         System.out.println("Informe o código de segurança (CVV):");
         String cvv = scanner.nextLine();
 
-        System.out.println("Pagamento com cartão realizado com sucesso.");
+        System.out.println("Pagamento com cartão realizado com sucesso! Aproveite seus livros.");
+    }
+
+    public void processarPagamentoCartaoAssinatura() {
+        System.out.println("Informe o número do cartão:");
+        String numero = scanner.nextLine();
+
+        System.out.println("Informe o nome presente no cartão:");
+        String nome = scanner.nextLine();
+
+        System.out.println("Informe a data de vencimento (MM/AA):");
+        String vencimento = scanner.nextLine();
+
+        System.out.println("Informe o código de segurança (CVV):");
+        String cvv = scanner.nextLine();
+
+        System.out.println("Pagamento com cartão realizado com sucesso! Aproveite seu plano.");
     }
 
     public void processarPagamentoBoleto() {

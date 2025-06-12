@@ -16,23 +16,11 @@ public class MenuPrincipal {
     private final AdministradorController administradorController;
     private final Scanner scanner;
     private final LivroController livroController;
-    private final LivroService livroService;
-    private final ExportadorCsvService exportadorCsvService;
-    private final UsuarioService usuarioService;
-    private final AdministradorService administradorService;
-    private final FormaPagamentoController formaPagamentoController;
-    private final AluguelService aluguelService;
 
 
     public MenuPrincipal(UsuarioController usuarioController, AdministradorController administradorController, LivroController livroController, LivroService livroService, ExportadorCsvService exportadorCsvService, UsuarioService usuarioService, AdministradorService administradorService, FormaPagamentoController formaPagamentoController, AluguelService aluguelService) {
         this.usuarioController = usuarioController;
         this.administradorController = administradorController;
-        this.livroService = livroService;
-        this.exportadorCsvService = exportadorCsvService;
-        this.usuarioService = usuarioService;
-        this.administradorService = administradorService;
-        this.formaPagamentoController = formaPagamentoController;
-        this.aluguelService = aluguelService;
         this.scanner = new Scanner(System.in);
         this.livroController = livroController;
     }
@@ -81,8 +69,7 @@ public class MenuPrincipal {
             System.out.println("#2 - Cadastrar livro");
             System.out.println("#3 - Editar registro de livro");
             System.out.println("#4 - Remover livro do catálogo");
-            System.out.println("#5 - Extrair lista de livros (CSV)");
-            System.out.println("#6 - Extrair lista de usuários (CSV)");
+            System.out.println("#5 - Exportar arquivos CSV");
             System.out.println("#0 - Voltar ao menu principal");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
@@ -93,7 +80,7 @@ public class MenuPrincipal {
                 case 2 -> livroController.exibeFormularioCadastroLivro();
                 case 3 -> livroController.exibeFormularioEditaLivro();
                 case 4 -> livroController.exibeFormularioExclusaoLivro();
-                case 5, 6 -> administradorController.menuExportacao();
+                case 5 -> administradorController.menuExportacao();
                 case 0 -> {
                     return;
                 }

@@ -51,8 +51,7 @@ public class LivroController {
 
         livroService.excluirLivro(livroParaExcluir);
 
-        var livroExcluido = livroRepository.findLivroById(livroParaExcluir);
-        System.out.println("Livro " + livroExcluido + "excluído com sucesso!");
+        System.out.println("Livro excluído com sucesso!");
     }
 
     public void exibeFormularioEditaLivro() {
